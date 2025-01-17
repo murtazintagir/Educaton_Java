@@ -40,7 +40,7 @@ public class Tasks3 {
     }
 
     public static void Task1() {
-        for (int i = 0; i < 101; i++) {
+        for (int i = 1; i < 101; i++) {
             System.out.println(i);
         }
     }
