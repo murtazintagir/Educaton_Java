@@ -1,4 +1,5 @@
 /**
+ * Уровень 1.1
  * Задача №1
  * Дано число. Проверьте, отрицательное оно или нет. Выведите об этом информацию в консоль.
  * Задача №2
@@ -17,30 +18,30 @@ package Level1._1;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Tasks1 {
     public static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void source() {
         System.out.println("Введите номер задачи:");
         int task = scan.nextInt();
         switch (task) {
             case 1:
-                Task1_1();
+                Task1();
                 break;
             case 2:
-                Task1_2();
+                Task2();
                 break;
             case 3:
-                Task1_3();
+                Task3();
                 break;
             case 4:
-                Task1_4();
+                Task4();
                 break;
             case 5:
-                Task1_5();
+                Task5();
                 break;
             case 6:
-                Task1_6();
+                Task6();
                 break;
             default:
                 System.out.println("Неверный ввод");
@@ -48,7 +49,7 @@ public class Task1 {
     }
 
     // Задача №1.1
-    public static void Task1_1() {
+    public static void Task1() {
         System.out.println("Введите число:");
         int number = scan.nextInt();
         if (number >= 0) {
@@ -59,7 +60,7 @@ public class Task1 {
     }
 
     // Задача №1.2
-    public static void Task1_2() {
+    public static void Task2() {
         System.out.println("Введите строку:");
         Scanner scan = new Scanner(System.in);
         String text = scan.nextLine();
@@ -67,7 +68,7 @@ public class Task1 {
     }
 
     // Задача №1.3
-    public static void Task1_3() {
+    public static void Task3() {
         System.out.println("Введите строку:");
         Scanner scan = new Scanner(System.in);
         String text = scan.nextLine();
@@ -75,7 +76,7 @@ public class Task1 {
     }
 
     // Задача №1.4
-    public static void Task1_4() {
+    public static void Task4() {
         System.out.println("Введите число:");
         int number = scan.nextInt();
         if (number % 2 == 0) {
@@ -86,7 +87,7 @@ public class Task1 {
     }
 
     // Задача №1.5
-    public static void Task1_5() {
+    public static void Task5() {
         System.out.println("Введите первое слово:");
         Scanner scan = new Scanner(System.in);
         String word1 = scan.nextLine();
@@ -100,7 +101,7 @@ public class Task1 {
     }
 
     // Задача №1.6
-    public static void Task1_6() {
+    public static void Task6() {
         System.out.println("Введите слово:");
         Scanner scan = new Scanner(System.in);
         String word = scan.nextLine();
