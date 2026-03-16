@@ -52,25 +52,37 @@ public class Tasks2 {
 
     public static void Task2() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        String str = String.valueOf(number);
-        System.out.println("Последняя цифра числа " + number + " " + str.charAt(str.length() - 1));
+        String str = scan.next();
+        if (Check.isInteger(str)) {
+            System.out.printf("Последняя цифра числа %s\n%d", str, Integer.parseInt(str) % 10);
+        } else {
+            System.out.println("Введенные символы не являются числом");
+        }
     }
 
     public static void Task3() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        String str = String.valueOf(number);
-        int numberFirst = str.charAt(0);
-        int numberLast = str.charAt(str.length() - 1);
-        System.out.println("Сумма первой и последней цифры числа " + number + " " + numberFirst + numberLast);
+        String str = scan.next();
+        if (Check.isInteger(str)) {
+            int numberFirst, numberLast, digitCount;
+            digitCount = str.length();
+            int number = Integer.parseInt(str);
+            if (digitCount == 1) {
+                System.out.println("Введенное число содержит только одну цифру");
+            } else {
+                numberFirst = number / (int) (Math.pow(10, digitCount - 1));
+                numberLast = number % 10;
+                System.out.printf("Сумма первой и последней цифры числа %d\n%d", number, numberFirst + numberLast);
+            }
+        } else {
+            System.out.println("Введенные символы не являются числом");
+        }
     }
 
     public static void Task4() {
         System.out.println("Введите число:");
         int number = scan.nextInt();
-        String str = String.valueOf(number);
-        System.out.println("Количество цифр в числе " + number + " равно " + str.length());
+        System.out.println("Количество цифр в числе " + number + " равно " + Integer.toString(number).length());
     }
 
     public static void Task5() {
@@ -86,4 +98,6 @@ public class Tasks2 {
             System.out.println("Первые цифры чисел " + number1 + " и " + number2 + " не совпадают");
         }
     }
+
+
 }
