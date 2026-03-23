@@ -8,7 +8,9 @@
  * Дано целое число, содержащее номер минуты от 0 до 60. Определите, в какую четверть часа попадает это значение.
  */
 
-package Level1._1;
+package Levels._1;
+
+import Levels.MainCode;
 
 import java.util.Scanner;
 
@@ -38,6 +40,7 @@ public class Tasks4 {
         for (int i = 0; i < 101; i += 2) {
             System.out.println(i);
         }
+        MainCode.choose_level();
     }
 
     public static void Task2() {
@@ -47,6 +50,7 @@ public class Tasks4 {
         for (int i = text.length() - 1; i >= 0; i--) {
             System.out.println(text.charAt(i));
         }
+        MainCode.choose_level();
     }
 
     public static void Task3() {
@@ -56,5 +60,6 @@ public class Tasks4 {
         for (int i = text.length() - 1; i >= 0; i--) {
             System.out.println(text.charAt(i));
         }
+        MainCode.choose_level();
     }
 }

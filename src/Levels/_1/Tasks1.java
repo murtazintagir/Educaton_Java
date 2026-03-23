@@ -14,7 +14,10 @@
  * Дано слово. Получите его последнюю букву. Если слово заканчивается на мягкий знак, то получите
  * предпоследнюю букву.
  */
-package Level1._1;
+package Levels._1;
+
+import Levels.CheckInput;
+import Levels.MainCode;
 
 import java.util.Scanner;
 
@@ -51,65 +54,76 @@ public class Tasks1 {
     // Задача №1.1
     public static void Task1() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        if (number >= 0) {
-            System.out.println("Число положительное");
+        String str = CheckInput.input();
+        if (CheckInput.isInteger(str)) {
+            if (CheckInput.number(str) >= 0) {
+                System.out.println("Число положительное");
+            } else {
+                System.out.println("Число отрицательное");
+            }
         } else {
-            System.out.println("Число отрицательное");
+            CheckInput.incorrectInput();
         }
+        MainCode.choose_level();
     }
 
     // Задача №1.2
     public static void Task2() {
         System.out.println("Введите строку:");
-        Scanner scan = new Scanner(System.in);
-        String text = scan.nextLine();
-        System.out.println("Длина строки " + text.length());
+        String str = CheckInput.input();
+        System.out.println("Длина строки " + str.length());
+        MainCode.choose_level();
     }
 
     // Задача №1.3
     public static void Task3() {
         System.out.println("Введите строку:");
-        Scanner scan = new Scanner(System.in);
-        String text = scan.nextLine();
-        System.out.println("Последний символ строки " + text.charAt(text.length() - 1));
+        String str = CheckInput.input();
+        System.out.println("Последний символ строки " + str.charAt(str.length() - 1));
+        MainCode.choose_level();
     }
 
     // Задача №1.4
     public static void Task4() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        if (number % 2 == 0) {
-            System.out.println("Число четное");
+        String str = CheckInput.input();
+        if (CheckInput.isInteger(str)) {
+            if (CheckInput.number(str) % 2 == 0) {
+                System.out.println("Число четное");
+            } else {
+                System.out.println("Число нечетное");
+            }
         } else {
-            System.out.println("Число нечетное");
+            CheckInput.incorrectInput();
         }
+        MainCode.choose_level();
     }
 
     // Задача №1.5
     public static void Task5() {
         System.out.println("Введите первое слово:");
-        Scanner scan = new Scanner(System.in);
-        String word1 = scan.nextLine();
+        String str1 = CheckInput.input();
         System.out.println("Введите второе слово:");
-        String word2 = scan.nextLine();
-        if (word1.charAt(0) == word2.charAt(0)) {
+        String str2 = CheckInput.input();
+        if (str1.charAt(0) == str2.charAt(0)) {
             System.out.println("Первые буквы слов совпадают");
         } else {
             System.out.println("Первые буквы слов не совпадают");
         }
+        MainCode.choose_level();
     }
 
     // Задача №1.6
     public static void Task6() {
         System.out.println("Введите слово:");
-        Scanner scan = new Scanner(System.in);
-        String word = scan.nextLine();
-        if (word.charAt(word.length() - 1) != 'ь') {
-            System.out.println("Последняя буква слова " + word.charAt(word.length() - 1));
+        String str = CheckInput.input();
+        char ch = 'ь';
+        if (str.charAt(str.length() - 1) != ch) {
+            System.out.println("Последняя буква слова " + str.charAt(str.length() - 1));
         } else {
             System.out.println("Последняя буква слова мягкий знак");
-            System.out.println("Предпоследняя буква слова " + word.charAt(word.length() - 2));
+            System.out.println("Предпоследняя буква слова " + str.charAt(str.length() - 2));
         }
+        MainCode.choose_level();
     }
 }

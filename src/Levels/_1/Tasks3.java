@@ -10,7 +10,9 @@
  * Дано целое число, содержащее номер месяца от 1 до 12. Определите, в какую пору года попадает этот месяц.
  */
 
-package Level1._1;
+package Levels._1;
+
+import Levels.MainCode;
 
 import java.util.Scanner;
 
@@ -43,6 +45,7 @@ public class Tasks3 {
         for (int i = 1; i < 101; i++) {
             System.out.println(i);
         }
+        MainCode.choose_level();
     }
 
     public static void Task2() {
@@ -54,6 +57,7 @@ public class Tasks3 {
         } else {
             System.out.println("Строка " + text + " состоит из одного символа");
         }
+        MainCode.choose_level();
     }
 
     public static void Task3() {
@@ -63,6 +67,7 @@ public class Tasks3 {
         int number2 = scan.nextInt();
         System.out.println("Остаток от деления числа " + number1 + " на число " + number2 +
                 " равен " + number1 % number2);
+        MainCode.choose_level();
     }
 
     public static void Task4() {
@@ -90,6 +95,6 @@ public class Tasks3 {
                 System.out.println("Осень");
                 break;
         }
-
+        MainCode.choose_level();
     }
 }

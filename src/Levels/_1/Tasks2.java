@@ -12,7 +12,10 @@
  * Даны два целых числа. Проверьте, что первые цифры этих чисел совпадают.
  */
 
-package Level1._1;
+package Levels._1;
+
+import Levels.CheckInput;
+import Levels.MainCode;
 
 import java.util.Scanner;
 
@@ -45,25 +48,30 @@ public class Tasks2 {
 
     public static void Task1() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        String str = String.valueOf(number);
-        System.out.println("Первая цифра числа " + number + " " + str.charAt(0));
+        String str = scan.next();
+        if (CheckInput.isInteger(str)) {
+            System.out.printf("Первая цифра числа %s\n%d", str, Integer.parseInt(str) / (int) (Math.pow(10, str.length() - 1)));
+        } else {
+            CheckInput.incorrectInput();
+        }
+        MainCode.choose_level();
     }
 
     public static void Task2() {
         System.out.println("Введите число:");
         String str = scan.next();
-        if (Check.isInteger(str)) {
+        if (CheckInput.isInteger(str)) {
             System.out.printf("Последняя цифра числа %s\n%d", str, Integer.parseInt(str) % 10);
         } else {
-            System.out.println("Введенные символы не являются числом");
+            CheckInput.incorrectInput();
         }
+        MainCode.choose_level();
     }
 
     public static void Task3() {
         System.out.println("Введите число:");
         String str = scan.next();
-        if (Check.isInteger(str)) {
+        if (CheckInput.isInteger(str)) {
             int numberFirst, numberLast, digitCount;
             digitCount = str.length();
             int number = Integer.parseInt(str);
@@ -75,28 +83,34 @@ public class Tasks2 {
                 System.out.printf("Сумма первой и последней цифры числа %d\n%d", number, numberFirst + numberLast);
             }
         } else {
-            System.out.println("Введенные символы не являются числом");
+            CheckInput.incorrectInput();
         }
+        MainCode.choose_level();
     }
 
     public static void Task4() {
         System.out.println("Введите число:");
-        int number = scan.nextInt();
-        System.out.println("Количество цифр в числе " + number + " равно " + Integer.toString(number).length());
+        String str = scan.next();
+        if (CheckInput.isInteger(str)) {
+            System.out.printf("Количество цифр в числе %d\n%d", Integer.parseInt(str), str.length());
+        }
+        MainCode.choose_level();
     }
 
     public static void Task5() {
         System.out.println("Введите первое число:");
-        int number1 = scan.nextInt();
-        System.out.println("Введите второе число:");
-        int number2 = scan.nextInt();
-        String str1 = String.valueOf(number1);
-        String str2 = String.valueOf(number2);
-        if (str1.charAt(0) == str2.charAt(0)) {
-            System.out.println("Первые цифры чисел " + number1 + " и " + number2 + " совпадают");
-        } else {
-            System.out.println("Первые цифры чисел " + number1 + " и " + number2 + " не совпадают");
+        String str1 = CheckInput.input();
+        if (!CheckInput.isInteger(str1)) {
+            CheckInput.incorrectInput();
         }
+
+        //int number2 = scan.nextInt();
+//
+        //if (str1.charAt(0) == str2.charAt(0)) {
+        //    System.out.println("Первые цифры чисел " + number1 + " и " + number2 + " совпадают");
+        //} else {
+        //    System.out.println("Первые цифры чисел " + number1 + " и " + number2 + " не совпадают");
+        //}
     }
 
 

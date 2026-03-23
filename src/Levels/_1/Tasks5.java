@@ -9,7 +9,7 @@
  *
  */
 
-package Level1._1;
+package Levels._1;
 
 import java.util.Scanner;
 
